@@ -3,19 +3,22 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 movVector = Vector2.zero;
     private float movementVelocity;
+    private Rigidbody2D rb;
     private void Start()
     {
         movementVelocity = 10;
+        rb = GetComponent<Rigidbody2D>();
     }
-    void Update()
+    private void FixedUpdate()
     {
         OnMove();
     }
     private void OnMove()
     {
         movVector = InputMannager.instance.GetMovementPj();
+        if (movVector == null) return;
         movVector.Normalize();
-        this.transform.position += (Vector3)movVector * Time.deltaTime * movementVelocity;
+        rb?.MovePosition(rb.position + movVector * Time.deltaTime * movementVelocity);
+        print(movVector);
     }
-    public Vector2 MOVVECTOR { get { return movVector; } }
 }

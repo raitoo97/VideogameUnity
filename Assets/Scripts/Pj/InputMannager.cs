@@ -17,7 +17,7 @@ public class InputMannager : MonoBehaviour
     private void OnEnable()
     {
         playerControllerInputs = new PlayerControllerInputs();
-        playerControllerInputs.Enable();
+        playerControllerInputs?.Enable();
     }
     private void OnDisable()
     {
