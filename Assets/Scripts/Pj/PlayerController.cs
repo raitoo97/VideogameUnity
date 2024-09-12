@@ -2,7 +2,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Vector2 movVector = Vector2.zero;
-    private float movementVelocity;
+    private int movementVelocity;
     private Rigidbody2D rb;
     private void Start()
     {
@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         OnMove();
+    }
+    private void Update()
+    {
         RotateSprite();
     }
     private void OnMove()

@@ -8,6 +8,7 @@ public class ChangePjSpriteHandler : MonoBehaviour
     public static ChangePjSpriteHandler Instance;
     [SerializeField]private POSITION positionSprite;
     private PlayerController spritePj;
+    private SpriteRenderer spriteRenderer;
     private void Awake()
     {
         if (Instance == null)
@@ -22,6 +23,7 @@ public class ChangePjSpriteHandler : MonoBehaviour
     private void Start()
     {
         spritePj = GameObject.FindObjectOfType<PlayerController>();
+        spriteRenderer = spritePj.gameObject.GetComponent<SpriteRenderer>();
         positionSprite = POSITION.UP;
     }
     private void Update()
@@ -33,16 +35,16 @@ public class ChangePjSpriteHandler : MonoBehaviour
         switch (positionSprite)
         {
             case POSITION.UP:
-                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                spriteRenderer.flipY = false;
                 break;
             case POSITION.DOWN:
-                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                spriteRenderer.flipY = true;
                 break;
             case POSITION.LEFT:
-                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                spriteRenderer.flipX = true;
                 break;
             case POSITION.RIGHT:
-                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 270f);
+                spriteRenderer.flipX = false;
                 break;
         }
     }
