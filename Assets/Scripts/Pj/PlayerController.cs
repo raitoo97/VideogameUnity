@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
         if (movVector == null) return;
         movVector.Normalize();
         rb?.MovePosition(rb.position + movVector * Time.deltaTime * movementVelocity);
-        print(movVector);
     }
     private void RotateSprite()
     {

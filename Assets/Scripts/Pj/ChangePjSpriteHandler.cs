@@ -23,7 +23,6 @@ public class ChangePjSpriteHandler : MonoBehaviour
     {
         spritePj = GameObject.FindObjectOfType<PlayerController>();
         positionSprite = POSITION.UP;
-        print(spritePj?.name);
     }
     private void Update()
     {
