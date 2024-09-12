@@ -19,11 +19,11 @@ public class PlayerController : MonoBehaviour
         movVector = InputMannager.instance.GetMovementPj();
         if (movVector == null) return;
         movVector.Normalize();
-        rb?.MovePosition(rb.position + movVector * Time.deltaTime * movementVelocity);
+        rb?.MovePosition(rb.position + movVector * Time.fixedDeltaTime * movementVelocity);
     }
     private void RotateSprite()
     {
-        if(movVector.x == 0 && movVector.y == 1)
+        if (movVector.x == 0 && movVector.y == 1)
         {
             ChangePjSpriteHandler.Instance.ChangePjRotation(POSITION.UP);
         }
