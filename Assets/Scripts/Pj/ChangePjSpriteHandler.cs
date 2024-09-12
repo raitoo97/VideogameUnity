@@ -36,15 +36,19 @@ public class ChangePjSpriteHandler : MonoBehaviour
         {
             case POSITION.UP:
                 spriteRenderer.flipY = false;
+                spriteRenderer.flipX = false;
                 break;
             case POSITION.DOWN:
                 spriteRenderer.flipY = true;
+                spriteRenderer.flipX = false;
                 break;
             case POSITION.LEFT:
                 spriteRenderer.flipX = true;
+                spriteRenderer.flipY = false;
                 break;
             case POSITION.RIGHT:
                 spriteRenderer.flipX = false;
+                spriteRenderer.flipY = false;
                 break;
         }
     }
