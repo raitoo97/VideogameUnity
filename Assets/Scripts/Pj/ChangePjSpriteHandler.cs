@@ -6,7 +6,7 @@ public enum POSITION
 public class ChangePjSpriteHandler : MonoBehaviour
 {
     public static ChangePjSpriteHandler Instance;
-    private POSITION positionSprite;
+    [SerializeField]private POSITION positionSprite;
     private PlayerController spritePj;
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class ChangePjSpriteHandler : MonoBehaviour
     {
         UpdateRotationPos();
     }
-    public void UpdateRotationPos()
+    private void UpdateRotationPos()
     {
         switch (positionSprite)
         {
@@ -37,13 +37,13 @@ public class ChangePjSpriteHandler : MonoBehaviour
                 spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 break;
             case POSITION.DOWN:
-                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                 break;
             case POSITION.LEFT:
-                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                 break;
             case POSITION.RIGHT:
-                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                spritePj.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 270f);
                 break;
         }
     }

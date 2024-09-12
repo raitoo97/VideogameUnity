@@ -3,6 +3,7 @@ public class InputMannager : MonoBehaviour
 {
     public static InputMannager instance;
     private PlayerControllerInputs playerControllerInputs;
+
     private void Awake()
     {
         if (instance == null)

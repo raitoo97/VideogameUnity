@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         OnMove();
+        RotateSprite();
     }
     private void OnMove()
     {
@@ -20,5 +21,24 @@ public class PlayerController : MonoBehaviour
         movVector.Normalize();
         rb?.MovePosition(rb.position + movVector * Time.deltaTime * movementVelocity);
         print(movVector);
+    }
+    private void RotateSprite()
+    {
+        if(movVector.x == 0 && movVector.y == 1)
+        {
+            ChangePjSpriteHandler.Instance.ChangePjRotation(POSITION.UP);
+        }
+        if (movVector.x == 0 && movVector.y == -1)
+        {
+            ChangePjSpriteHandler.Instance.ChangePjRotation(POSITION.DOWN);
+        }
+        if (movVector.x == 1 && movVector.y == 0)
+        {
+            ChangePjSpriteHandler.Instance.ChangePjRotation(POSITION.RIGHT);
+        }
+        if (movVector.x == -1 && movVector.y == 0)
+        {
+            ChangePjSpriteHandler.Instance.ChangePjRotation(POSITION.LEFT);
+        }
     }
 }
