@@ -28,19 +28,19 @@ public class PlayerController : MonoBehaviour
     {
         if (movVector.x == 0 && movVector.y == 1)
         {
-            ChangePjSpriteHandler.Instance.ChangePjRotation(POSITION.UP);
+            AnimationController.Instance.ChangePjRotation(POSITION.UP);
         }
         if (movVector.x == 0 && movVector.y == -1)
         {
-            ChangePjSpriteHandler.Instance.ChangePjRotation(POSITION.DOWN);
+            AnimationController.Instance.ChangePjRotation(POSITION.DOWN);
         }
         if (movVector.x == 1 && movVector.y == 0)
         {
-            ChangePjSpriteHandler.Instance.ChangePjRotation(POSITION.RIGHT);
+            AnimationController.Instance.ChangePjRotation(POSITION.RIGHT);
         }
         if (movVector.x == -1 && movVector.y == 0)
         {
-            ChangePjSpriteHandler.Instance.ChangePjRotation(POSITION.LEFT);
+            AnimationController.Instance.ChangePjRotation(POSITION.LEFT);
         }
     }
 }

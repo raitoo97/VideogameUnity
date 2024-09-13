@@ -3,9 +3,9 @@ public enum POSITION
 {
     UP, DOWN, LEFT, RIGHT
 }
-public class ChangePjSpriteHandler : MonoBehaviour
+public class AnimationController : MonoBehaviour
 {
-    public static ChangePjSpriteHandler Instance;
+    public static AnimationController Instance;
     [SerializeField]private POSITION positionSprite;
     private PlayerController spritePj;
     private SpriteRenderer spriteRenderer;
@@ -23,6 +23,7 @@ public class ChangePjSpriteHandler : MonoBehaviour
     private void Start()
     {
         spritePj = GameObject.FindObjectOfType<PlayerController>();
+        if (spritePj == null) return;
         spriteRenderer = spritePj.gameObject.GetComponent<SpriteRenderer>();
         positionSprite = POSITION.UP;
     }
@@ -32,6 +33,7 @@ public class ChangePjSpriteHandler : MonoBehaviour
     }
     private void UpdateRotationPos()
     {
+        if (spriteRenderer == null) return;
         switch (positionSprite)
         {
             case POSITION.UP:
