@@ -29,9 +29,9 @@ public class AnimationController : MonoBehaviour
     }
     private void Update()
     {
-        UpdateRotationPos();
+        UpdateAnimation();
     }
-    private void UpdateRotationPos()
+    private void UpdateAnimation()
     {
         if (spriteRenderer == null) return;
         switch (positionSprite)
@@ -54,7 +54,7 @@ public class AnimationController : MonoBehaviour
                 break;
         }
     }
-    public void ChangePjRotation(POSITION currentPoistion)
+    public void ChangeAnimation(POSITION currentPoistion)
     {
         positionSprite = currentPoistion;
     }
